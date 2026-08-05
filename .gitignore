@@ -1,0 +1,19 @@
+# Auto-generated during bisect workflow — do not commit
+affected_files.json
+bisect_filelist.txt
+
+# Simulation result files (large — store separately)
+*.out
+*.eorep
+*.his
+*.rep
+*.bkp
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# VS Code
+.vscode/

@@ -1,0 +1,39 @@
+# =============================================================================
+# Regression Agent Configuration
+# Fill in the TODO values when deploying on the VM
+# =============================================================================
+
+# Path to the script that builds the Aspen Plus engine (Fortran compile + link)
+build_script: "TODO: C:/path/to/build.bat"
+
+# Path to the script that runs Aspen Plus simulations.
+# Called as: <run_script> <filepath>   (for a single file during bisect)
+# Called as: <run_script>              (for a full daily run)
+run_script: "TODO: C:/path/to/run_simulations.bat"
+
+# Path to the script that compares results and writes the diff log.
+# Should compare results_dir against baseline_dir and write to diff_log.
+# Called with no arguments after simulations finish.
+compare_script: "TODO: C:/path/to/compare_results.bat"
+
+# Path to the diff log file produced by compare_script.
+# Must contain ONLY meaningful differences (date/time etc. already filtered out).
+# An empty file = no differences = good.
+diff_log: "TODO: C:/path/to/diff_output.log"
+
+# Directory where today's simulation results (.out, .eorep) are written
+results_dir: "TODO: C:/path/to/results"
+
+# Directory containing yesterday's baseline results (.out, .eorep)
+baseline_dir: "TODO: C:/path/to/baseline"
+
+# Root of the git repository containing Fortran user models
+fortran_repo: "TODO: C:/path/to/fortran_repo"
+
+# Temporary file written by analyze_diffs.py and read by bisect_test.py.
+# Lists the .bkp files that have differences — only these are re-run during bisect.
+affected_files_cache: "affected_files.json"
+
+# Timeouts (seconds). Increase for large builds or slow simulations.
+build_timeout: 1800   # 30 min
+sim_timeout:   3600   # 1 hr per file
